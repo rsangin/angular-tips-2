@@ -1,0 +1,17 @@
+<div class="container">
+  <ng-container *ngIf="isSlow">
+    <app-slow-component></app-slow-component>
+    <app-slow-component></app-slow-component>
+    <app-slow-component></app-slow-component>
+    <app-slow-component></app-slow-component>
+  </ng-container>
+
+  <ng-container *ngIf="!isSlow">
+    <app-fast-component></app-fast-component>
+    <app-fast-component></app-fast-component>
+    <app-fast-component></app-fast-component>
+    <app-fast-component></app-fast-component>
+  </ng-container>
+
+  <div>Mouse Position: {{ x + ", " + y }}</div>
+</div>

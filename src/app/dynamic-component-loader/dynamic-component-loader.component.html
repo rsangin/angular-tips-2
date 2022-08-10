@@ -1,0 +1,17 @@
+<div class="container">
+  <label>First Number</label>
+  <input type="number" [(ngModel)]="firstNumber" />
+
+  <label>Second Number</label>
+  <input type="number" [(ngModel)]="secondNumber" />
+
+  <br />
+
+  <button *ngFor="let operation of operations" (click)="operationName = operation">{{ operation }}</button>
+
+  <app-operation-view-loader
+    [firstNumber]="firstNumber"
+    [secondNumber]="secondNumber"
+    [operation]="operationName"
+  ></app-operation-view-loader>
+</div>

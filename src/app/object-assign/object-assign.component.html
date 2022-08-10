@@ -1,0 +1,74 @@
+<div class="container">
+  <article>
+    <header>Class</header>
+    <pre>
+      <code>
+        export class Post {{ '{' }}
+          public userId!: number;
+          public id!: number;
+          public title!: string;
+          public body!: string;<ng-container *ngIf="betterWay">
+
+          public constructor(post: Partial{{ '<' }}Post>) {{ '{' }}
+            Object.assign(this, post);
+          {{ '}' }}
+          </ng-container>
+        {{ '}' }}
+      </code>
+    </pre>
+
+    Result of instanceof without using new: {{ instanceOf }}
+    <br />
+    Create object can be like this
+
+    <pre>
+      <code *ngIf="!betterWay">
+        const post = new Post();
+        post.body = '';
+        post.id = 1;
+        post.title = '';
+        post.userId = 2;
+      </code>
+      <code *ngIf="betterWay">
+        const post = new Post({{ '{' }}
+          body: '',
+          id: 1,
+          title: '',
+          userId: 2,
+        {{ '}' }});
+      </code>
+    </pre>
+
+    <button (click)="betterWay = !betterWay">
+      {{ !betterWay ? "Better Way" : "Last Way" }}
+    </button>
+  </article>
+  <article>
+    <header>Interface</header>
+    <pre>
+      <code>
+        export interface IPost {{ '{' }}
+          userId: number;
+          id: number;
+          title: string;
+          body: string;
+        {{ '}' }}
+      </code>
+    </pre>
+
+    Can't have instanceof with interface.
+    <br />
+    Create object can be like this
+
+    <pre>
+      <code>
+        const post: IPost = {{ '{' }}
+          body: '',
+          id: 1,
+          title: '',
+          userId: 2,
+        {{ '}' }};
+      </code>
+    </pre>
+  </article>
+</div>

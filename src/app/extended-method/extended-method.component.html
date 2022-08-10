@@ -1,0 +1,36 @@
+<div class="container">
+  <article>
+    <header>Extended Method</header>
+
+    To have extended method first add declaration file and declare a method you
+    want to extend:
+
+    <pre>
+      <code>
+        interface Math {{ '{' }}
+              randomInt(min: number, max: number): number;
+        {{ '}' }}
+      </code>
+    </pre>
+
+    Then in polyfills.ts implement your declared method:
+
+    <pre>
+      <code>
+        Math.randomInt = function (min: number, max: number): number {{ '{' }}
+          return Math.round(Math.random() * max + min);
+        {{ '}' }};
+      </code>
+    </pre>
+
+    You can even change prototype method implemenation in polyfills:
+
+    <pre>
+      <code>
+        Date.prototype.toString = function (): string {{ '{' }}
+          return 'new to string';
+        {{ '}' }};
+      </code>
+    </pre>
+  </article>
+</div>
