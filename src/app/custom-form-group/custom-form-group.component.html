@@ -1,0 +1,5 @@
+<form [formGroup]="formGroup" (submit)="submit()">
+  <input type="text" formControlName="firstName" placeholder="first name" />
+  <input type="text" formControlName="lastName" placeholder="last name" />
+  <button type="submit" [disabled]="formGroup.invalid">submit</button>
+</form>

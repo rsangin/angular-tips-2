@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CustomFormGroupComponent } from './custom-form-group/custom-form-group.component';
 import { DetectChangeStrategyComponent } from './detect-change-strategy/detect-change-strategy.component';
 import { DynamicComponentLoaderComponent } from './dynamic-component-loader/dynamic-component-loader.component';
 import { ExtendedMethodComponent } from './extended-method/extended-method.component';
@@ -17,6 +18,7 @@ const routes: Routes = [
   },
   { path: 'promise-observable', component: PromiseObservableComponent },
   { path: 'detect-change-strategy', component: DetectChangeStrategyComponent },
+  { path: 'form-group', component: CustomFormGroupComponent },
   {
     path: 'pipe-method-performance',
     component: PipeMethodPerformanceComponent,

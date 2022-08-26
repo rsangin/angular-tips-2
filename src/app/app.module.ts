@@ -17,8 +17,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { AddArithmaticOperationComponent } from './dynamic-component-loader/add-arithmatic-operation/add-arithmatic-operation.component';
 import { MultiplyArithmaticOperationComponent } from './dynamic-component-loader/multiply-arithmatic-operation/multiply-arithmatic-operation.component';
 import { SubtractArithmaticOperationComponent } from './dynamic-component-loader/subtract-arithmatic-operation/subtract-arithmatic-operation.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { OperationViewLoaderDirective } from './dynamic-component-loader/operation-view-loader.directive';
+import { CustomFormGroupComponent } from './custom-form-group/custom-form-group.component';
 
 @NgModule({
   declarations: [
@@ -37,8 +38,15 @@ import { OperationViewLoaderDirective } from './dynamic-component-loader/operati
     MultiplyArithmaticOperationComponent,
     SubtractArithmaticOperationComponent,
     OperationViewLoaderDirective,
+    CustomFormGroupComponent,
   ],
-  imports: [BrowserModule, FormsModule, AppRoutingModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
+    AppRoutingModule,
+    HttpClientModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
